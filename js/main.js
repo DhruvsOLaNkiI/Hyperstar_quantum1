@@ -314,10 +314,32 @@ function initScrollAnimations() {
       return;
     }
 
-    /* Store the lead locally until a backend/CRM endpoint is connected */
+    /* Store the lead locally as fallback */
+    const payload = {
+      name,
+      email,
+      phone,
+      interest: form.interest.value,
+      source: "brochure_modal"
+    };
+
     const leads = JSON.parse(localStorage.getItem("q1BrochureLeads") || "[]");
-    leads.push({ name, email, phone, interest: form.interest.value, at: new Date().toISOString() });
+    leads.push({ ...payload, at: new Date().toISOString() });
     localStorage.setItem("q1BrochureLeads", JSON.stringify(leads));
+
+    /* API Endpoint Resolver (Works on localhost:3000, Live Server, file://, and Production) */
+    const apiEndpoint = (window.location.protocol === "file:" || (window.location.port !== "3000" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")))
+      ? "http://localhost:3000/api/leads"
+      : "/api/leads";
+
+    /* Send lead directly to MongoDB Atlas via Node.js API */
+    fetch(apiEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(res => res.json())
+      .then(data => console.log("✅ Saved to MongoDB Atlas:", data))
+      .catch(err => console.warn("MongoDB API submission error:", err));
 
     stepForm.hidden = true;
     stepSuccess.hidden = false;
@@ -351,14 +373,31 @@ function initScrollAnimations() {
       return;
     }
 
-    const leads = JSON.parse(localStorage.getItem("q1ContactLeads") || "[]");
-    leads.push({
-      name, email, phone,
+    const payload = {
+      name,
+      email,
+      phone,
       interest: form.interest.value,
       message,
-      at: new Date().toISOString(),
-    });
+      source: "contact_form"
+    };
+
+    const leads = JSON.parse(localStorage.getItem("q1ContactLeads") || "[]");
+    leads.push({ ...payload, at: new Date().toISOString() });
     localStorage.setItem("q1ContactLeads", JSON.stringify(leads));
+
+    const apiEndpoint = (window.location.protocol === "file:" || (window.location.port !== "3000" && (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")))
+      ? "http://localhost:3000/api/leads"
+      : "/api/leads";
+
+    /* Send lead directly to MongoDB Atlas via Node.js API */
+    fetch(apiEndpoint, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    }).then(res => res.json())
+      .then(data => console.log("✅ Saved to MongoDB Atlas:", data))
+      .catch(err => console.warn("MongoDB API submission error:", err));
 
     successEl.hidden = false;
   });
