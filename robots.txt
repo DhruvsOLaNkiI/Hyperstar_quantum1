@@ -1,0 +1,47 @@
+# ==============================================================================
+# Hyperstar Quantum 1 - AI Search & Web Crawler Configuration
+# Allows Search Engines & AI Search Engines (OpenAI, Gemini, Claude, Perplexity)
+# ==============================================================================
+
+# Standard Search Engines (Google, Bing, Yahoo, DuckDuckGo)
+User-agent: *
+Allow: /
+
+# OpenAI Crawlers (ChatGPT Search, GPTBot, OAI-SearchBot)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Google AI Crawler (Gemini & Vertex AI Search)
+User-agent: Google-Extended
+Allow: /
+
+# Anthropic Claude Crawlers
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity AI Search Crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Apple & Meta AI Crawlers
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+# Common Crawl (AI Training & Datasets)
+User-agent: CCBot
+Allow: /
+
+# Sitemap Location
+Sitemap: https://hyperstar-quantum1.com/sitemap.xml
