@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="128" fill="#0A0C10"/>
+  <!-- Gold Hyperstar Emblem -->
+  <path d="M256 56 L284 216 L444 244 L284 272 L256 432 L228 272 L68 244 L228 216 Z" fill="url(#goldStarGrad)"/>
+  <!-- Core Glow -->
+  <circle cx="256" cy="244" r="28" fill="#FFFFFF" opacity="0.6"/>
+  <defs>
+    <linearGradient id="goldStarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3E0"/>
+      <stop offset="40%" stop-color="#E8A25C"/>
+      <stop offset="100%" stop-color="#9C5A1E"/>
+    </linearGradient>
+  </defs>
+</svg>

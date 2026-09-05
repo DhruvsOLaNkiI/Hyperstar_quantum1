@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 90" width="220" height="45">
+  <!-- HYPERS -->
+  <text x="0" y="44" font-family="'Manrope', 'Helvetica', sans-serif" font-size="34" font-weight="300" letter-spacing="10" fill="#F3DFC6">HYPERS</text>
+  
+  <!-- Four point star symbol in 'star' -->
+  <path d="M228 14 L233 36 L255 41 L233 46 L228 68 L223 46 L201 41 L223 36 Z" fill="url(#starGoldGrad)"/>
+  
+  <!-- AR -->
+  <text x="256" y="44" font-family="'Manrope', 'Helvetica', sans-serif" font-size="34" font-weight="300" letter-spacing="10" fill="#F3DFC6">AR</text>
+  
+  <!-- DEVELOPERS -->
+  <text x="75" y="74" font-family="'Manrope', 'Helvetica', sans-serif" font-size="12" font-weight="500" letter-spacing="14" fill="#E8A25C">DEVELOPERS</text>
+  
+  <defs>
+    <linearGradient id="starGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E8A25C"/>
+      <stop offset="100%" stop-color="#A56223"/>
+    </linearGradient>
+  </defs>
+</svg>

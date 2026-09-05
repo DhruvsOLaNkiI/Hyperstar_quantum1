@@ -74,6 +74,7 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(180deg, rgba(4,6,14,.75), rgba(4,6,14,0));
 }
 .nav__logo { display: flex; align-items: center; gap: 10px; }
+.nav__logo-img { height: 36px; width: auto; display: block; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(232,162,92,0.3)); }
 .nav__logo-star { color: var(--gold-bright); font-size: 14px; }
 .nav__logo-text {
   font-size: 17px; letter-spacing: .28em; font-weight: 400; text-transform: lowercase;
