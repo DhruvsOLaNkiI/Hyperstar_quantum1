@@ -22,12 +22,12 @@ app.use(express.static(path.join(__dirname)));
 mongoose.connect(MONGODB_URI, {
   dbName: 'Quantum'
 })
-.then(() => {
-  console.log('✅ Connected to MongoDB Atlas Database: Quantum (Collection: Quantum1)');
-})
-.catch((err) => {
-  console.error('❌ MongoDB Connection Error:', err.message);
-});
+  .then(() => {
+    console.log('✅ Connected to MongoDB Atlas Database: Quantum (Collection: Quantum1)');
+  })
+  .catch((err) => {
+    console.error('❌ MongoDB Connection Error:', err.message);
+  });
 
 // API Routes
 
