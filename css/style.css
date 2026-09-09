@@ -585,13 +585,18 @@ body.modal-open { overflow: hidden; }
 }
 
 /* ═══════════ ABOUT US ═══════════ */
-.about__heading {
-  font-family: var(--display); font-weight: 400; text-transform: uppercase;
-  font-size: clamp(26px, 4vw, 50px); letter-spacing: .01em;
+.about__copy {
+  max-width: 720px;
+  margin-top: 28px;
+  text-align: left;
 }
-.about__cols {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(24px, 4vw, 60px); margin-top: 34px; max-width: 1000px;
+.about__copy p {
+  color: var(--muted); font-size: 15.5px; line-height: 1.9; margin-bottom: 18px;
+}
+.about__copy h3 {
+  font-family: var(--display); font-weight: 400; text-transform: uppercase;
+  font-size: clamp(18px, 2.4vw, 26px); letter-spacing: .04em;
+  color: var(--ink); margin: 32px 0 14px;
 }
 .about__cols p { color: var(--muted); font-size: 15px; line-height: 1.9; }
 .about__pillars {
